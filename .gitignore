@@ -1,0 +1,7 @@
+# do NOT track these folders
+
+.vscode/
+__pycache__/
+
+#do NOT track these files
+config.json

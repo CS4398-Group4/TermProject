@@ -1,0 +1,4 @@
+# Do NOT track these directories
+__pycache__/
+
+# Do NOT track these files/
