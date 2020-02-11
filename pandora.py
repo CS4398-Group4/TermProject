@@ -6,6 +6,7 @@ You can find the necessary documentation at https://discordpy.readthedocs.io/en/
 """
 import discord
 from discord.ext import commands
+import json
 
 """
 Our unique bot token is given to us by discord and we should NEVER face it outward to the public.
@@ -15,6 +16,11 @@ This will be stored in 'config.json' which we also will NOT push to the github. 
 """
 TOKEN = ''
 bot = commands.Bot(command_prefix='!') # * we can change this to whatever we want '&' maybe?
+
+
+with open('config.json', 'r') as fin:
+    data = json.load(fin)
+    TOKEN = data["token"]
 
 """
 EVENTS
