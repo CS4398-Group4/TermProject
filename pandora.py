@@ -36,7 +36,9 @@ async def clear(ctx, amount=2):
 
     await ctx.channel.purge(limit=amount)
 
-#  * Cog Loading
+"""
+COG LOADING
+"""
 @bot.command(hidden=True)
 async def load(ctx, extension):
     bot.load_extension(f'cogs.{extension}')
