@@ -2,6 +2,7 @@
 
 .vscode/
 __pycache__/
+.pytest_cache/
 
 #do NOT track these files
 config.json

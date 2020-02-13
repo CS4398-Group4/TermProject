@@ -6,10 +6,8 @@ import json
 import os
 
 
-# * Token Loading
-TOKEN = ''
-bot = commands.Bot(command_prefix='!') # * we can change this to whatever we want '&' maybe?
-
+# * Bot Initilization and Token Loading
+bot = commands.Bot(command_prefix='!') # * we can change this prefix to whatever we want '-' maybe?
 
 with open('config.json', 'r') as fin:
     data = json.load(fin)
@@ -23,34 +21,28 @@ async def on_ready():
     print(f'Logged in as: {bot.user.name}') 
     print(f'With ID: {bot.user.id}')
 
-
-
-
-
-# * COMMANDS
-@bot.command()
+"""
+COMMANDS
+"""
+@bot.command(name="ping", brief="ping the bot!", description="A ping command to Pandora's Box, should respond with 'pong'.")
 async def ping(ctx):
     await ctx.send('pong')
 
-@bot.command(aliases=['hi', 'hey'])
-async def hello(ctx):
-    await ctx.send(f"Hi There {ctx.author.mention}")
-
-
-@bot.command(aliases=['purge'])
+# * At a later date we should probably add permissions or 'hidden=True' to this command
+@bot.command(name="clear", aliases=['purge'], brief="Remove messages [Admin Only]", description="Messages are annoying, if you're an Admin, use this to get rid of those pesky messages!")
 async def clear(ctx, amount=2):
     if amount <= 0:
         await ctx.send("I can't purge 0 messages. Try again!")
 
     await ctx.channel.purge(limit=amount)
 
-
-@bot.command()
+#  * Cog Loading
+@bot.command(hidden=True)
 async def load(ctx, extension):
     bot.load_extension(f'cogs.{extension}')
 
 
-@bot.command()
+@bot.command(hidden=True)
 async def unload(ctx, extension):
     bot.unload_extension(f'cogs.{extension}')
 
@@ -67,6 +59,6 @@ for filename in os.listdir('./cogs'):
         bot.load_extension(f'cogs.{filename[:-3]}')
 
 """
-Literally no need to touch this.
+No need to touch this.
 """
 bot.run(TOKEN)
