@@ -33,11 +33,11 @@ class Greeting(commands.Cog):
         if channel is not None:
 
             try:
-                name = member.display_name
+                name = member
 
                 # * Personal Message to the User
-                embed = discord.Embed(title=f"Welcome {name}!",
-                                    description=f"Greetings {name.mention}!\nWelcome to the Server!")
+                embed = discord.Embed(title=f"Welcome {name.display_name}!",
+                                    description=f"Greetings {name.mention}!\nWelcome to the Server! I am Pandora's Box\nType '!help' to see what I can do!")
 
                 await channel.send(embed=embed)
             except Exception as e: # * Catch ANY error and save it into the variable e
