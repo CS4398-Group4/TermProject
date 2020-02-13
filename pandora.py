@@ -20,6 +20,24 @@ COMMANDS
 async def ping(ctx):
     await ctx.send('pong')
 
+@bot.command(name="search", brief="Google search!", description="Don't want to leave the group to google something? Don't worry Pandora's Box got your back.", aliases=['Search', 'Find', 'find'])
+async def search(ctx, *, args):
+
+    search_string = "https://www.google.com/search?q="
+
+    for space in args:
+        if space == ' ':
+            args = args.replace(" ", "+")
+    else:
+        pass
+
+    link = str(search_string) + str(args)
+
+    embed = discord.Embed(title=f"Search results: {args}", url=link)
+    embed.add_field(name="A Google Search turned this up:", value=link)
+
+    await ctx.send(embed=embed)
+
 """
 EVENTS
 """
