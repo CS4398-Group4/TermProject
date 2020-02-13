@@ -14,27 +14,19 @@ with open('config.json', 'r') as fin:
     TOKEN = data["token"]
 
 """
-EVENTS
-"""
-@bot.event
-async def on_ready():
-    print(f'Logged in as: {bot.user.name}') 
-    print(f'With ID: {bot.user.id}')
-
-"""
 COMMANDS
 """
 @bot.command(name="ping", brief="ping the bot!", description="A ping command to Pandora's Box, should respond with 'pong'.")
 async def ping(ctx):
     await ctx.send('pong')
 
-# * At a later date we should probably add permissions or 'hidden=True' to this command
-@bot.command(name="clear", aliases=['purge'], brief="Remove messages [Admin Only]", description="Messages are annoying, if you're an Admin, use this to get rid of those pesky messages!")
-async def clear(ctx, amount=2):
-    if amount <= 0:
-        await ctx.send("I can't purge 0 messages. Try again!")
-
-    await ctx.channel.purge(limit=amount)
+"""
+EVENTS
+"""
+@bot.event
+async def on_ready():
+    print(f'Logged in as: {bot.user.name}') 
+    print(f'With ID: {bot.user.id}')
 
 """
 COG LOADING
