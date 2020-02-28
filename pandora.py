@@ -5,7 +5,7 @@ from discord.ext import commands
 import json
 import os
 
-
+# comment
 # * Bot Initilization and Token Loading
 bot = commands.Bot(command_prefix='!') # * we can change this prefix to whatever we want '-' maybe?
 
