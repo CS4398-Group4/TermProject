@@ -6,3 +6,5 @@ __pycache__/
 
 #do NOT track these files
 config.json
+Pipfile
+Pipfile.lock
