@@ -23,7 +23,7 @@ class NBA(commands.Cog):
         print(f'loaded cog: {self.__name__}')
 
     # * Commands
-    @commands.command(aliases=['sch'])
+    @commands.command(aliases=['sch'], brief="See The NBA Schedule for Today", description="Ever want to see the NBA schedule at a whim! Now use the !schedule command!")
     async def schedule(self, ctx):
         today_str = self.today.strftime("%B %-d, %Y")
         today_compare = self.today.strftime("%Y-%m-%d")
