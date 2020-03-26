@@ -13,7 +13,7 @@ class MLB(commands.Cog):
         self.today = datetime.now().date
 
     def load_mlb_schedule(self):
-        with open(os.path.join(os.path.dirname(__file__), 'assests/mlb_schedule.json')) as infile:
+        with open(os.path.join(os.path.dirname(__file__), 'assets/mlb_schedule.json')) as infile:
             data = json.load(infile)
         for game in data:
             self.schedule.append(game);
