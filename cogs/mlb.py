@@ -5,8 +5,6 @@ import discord
 from discord.ext import commands
 
 
-
-
 class MLB(commands.Cog):
 
     def __init__(self, bot):
@@ -33,7 +31,7 @@ class MLB(commands.Cog):
                 todays_games.append(game)
 
         embed = discord.Embed(
-            title=f"NBA Games for {today_str}")
+            title=f"MLB Games for {today_str}")
 
         count = 1
         for game in todays_games:
