@@ -25,7 +25,7 @@ class MLB(commands.Cog):
         print(f'loaded cog: {self.__name__}')
 
     # command
-    @commands.command(aliases=['mlb sch', 'mlb'], brief="See The MLB Schedule for today")
+    @commands.command(aliases=['mlb'], brief="See The MLB Schedule for today")
     async def get_schedule(self, ctx):
         count = 1
         current1 = self.today.strftime("%B %-d, %Y")
