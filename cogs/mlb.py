@@ -8,7 +8,7 @@ from discord.ext import commands
 class MLB(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.__name__ = "NBA Schedule"
+        self.__name__ = "MLB Schedule"
         self.schedule = []
         self.today = datetime.now().date
 
