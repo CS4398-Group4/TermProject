@@ -38,8 +38,7 @@ class NBA(commands.Cog):
 
         count = 1
         for game in todays_games:
-            embed.add_field(name=f"Game {count}",
-                            value=f"{game['visitor_name']} vs {game['home_name']} @ {game['gametimeET']} ET")
+            embed.add_field(name=f"Game {count}",value=f"{game['visitor_name']} vs {game['home_name']} @ {game['gametimeET']} ET")
             count += 1
 
         await ctx.send(embed=embed)

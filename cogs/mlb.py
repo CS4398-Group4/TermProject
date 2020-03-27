@@ -38,8 +38,9 @@ class MLB(commands.Cog):
         embed = discord.Embed(title=f"MLB Games for {today_str}")
 
         count = 1
-        for games in current_games:
-            embed.add_field(name=f"Game {count}", value=f"{games['Visitor']} vs {games['Home']} @ {games['GameTimeET']} ET")
+        for game in current_games:
+            embed.add_field(name=f"Game {count}",
+                            value=f"{game['visitor_name']} vs {game['home_name']} @ {game['gametimeET']} ET")
             count += 1
 
         await ctx.send(embed=embed)
