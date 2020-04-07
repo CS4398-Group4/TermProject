@@ -46,6 +46,10 @@ async def on_ready():
     print(f'Logged in as: {bot.user.name}') 
     print(f'With ID: {bot.user.id}')
 
+@bot.event
+async def on_command_error(ctx, error):
+    await ctx.send(embed=discord.Embed(title="Something went wrong.", description="Please check the format of your command."))
+
 """
 COG LOADING
 """

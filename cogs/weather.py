@@ -26,7 +26,12 @@ class Weather(commands.Cog):
         # TODO: Provide an error case if a command that requires an argument is not given one.
         try:
             # * Turn the user input into an integer
-            user_zipcode = int(arg)
+            user_zipcode = str(arg)
+
+            if len(user_zipcode) != 5:
+                raise ValueError("The zipcode is not the correct length")
+
+            user_zipcode = int(user_zipcode)
 
             # * Use the zipcode database to retrieve geographical data from the zipcod - returns None on error.
             zipcode_info = self.search.by_zipcode(user_zipcode)
