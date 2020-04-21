@@ -5,7 +5,7 @@ from discord.ext import commands
 import json
 import os
 
-# comment
+
 # * Bot Initilization and Token Loading
 bot = commands.Bot(command_prefix='!') # * we can change this prefix to whatever we want '-' maybe?
 
@@ -45,6 +45,10 @@ EVENTS
 async def on_ready():
     print(f'Logged in as: {bot.user.name}') 
     print(f'With ID: {bot.user.id}')
+
+@bot.event
+async def on_command_error(ctx, error):
+    await ctx.send(embed=discord.Embed(title="Something went wrong.", description="Please check the format of your command."))
 
 """
 COG LOADING
