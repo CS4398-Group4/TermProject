@@ -2,8 +2,8 @@ from discord.ext import commands
 import discord
 import requests
 import json
-import giphy_client
-from giphy_client.rest import ApiException
+#import giphy_client
+#from giphy_client.rest import ApiException
 import aiohttp
 import random
 import urllib
